@@ -23,10 +23,10 @@ dropout_rate=0.5	#float: dropout rate in between dense layers
 l2_reg=0.0005		#float: L2 regulaization weight decay value in conv2d layers
 lr=0.0000005		#float: learning rate for the model
 
-starting_weights='/work/05370/afraser/stampede2/a511-prod-runs/run16-noise-translate-40k/weights_at_epoch_148.h5'  	#string: location of starting weights to load into the model, set to empty string if starting without weights
-validation_data_loc='CryoEM_Validation_Set/Validate_all'								#string: location of validation data directory
-data_directory='/work/05370/afraser/stampede2/a511-data/' 								#string: location of training and validation data
-val_list='val_postive_list.txt'												#string: location of where to save list of stalled intermediate particle numbers for cryoSPARC
+starting_weights=''  			#string: location of starting weights to load into the model, set to empty string if starting without weights
+validation_data_loc=''			#string: location of validation data directory
+data_directory='' 			#string: location of training and validation data
+val_list='val_postive_list.txt'		#string: location of where to save list of stalled intermediate particle numbers for cryoSPARC
     
 def load_validation_images(validate,data_dir,validation_data_loc,size):
     """loads validation images
