@@ -75,7 +75,7 @@ def load_training_images(train,data_dir,training_data_loc,size,guass_mean,gauss_
     return x_train									#return numpy array
     
 def load_test_images(test,data_dir,test_data_loc,size):
-    """loads test images, performs data augmentation 
+    """loads test images
     input: test, dataframe, contains image names and labels in the test set
     input: data_dir, path, location of training and validation data
     input: test_data_loc, string, location of test data directory
