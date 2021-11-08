@@ -36,7 +36,7 @@ def load_validation_images(validate,data_dir,validation_data_loc,size):
     input: size, int, size of the square images
     output: x_validate, np array, all validation images in a numpy array"""
     all_images = []								#array which will hold the images
-    for img_name in validate.filename:						#loop through all images in the test set
+    for img_name in validate.filename:						#loop through all images in the validation set
         image_path = os.path.join(data_dir,validation_data_loc, img_name)	#define image path
         img = imread(image_path, flatten=True)					#read in the image
         img = img.reshape([size, size, 1])					#reshape the image to the appropriate dimensions
