@@ -105,14 +105,14 @@ def create_augmented_training_label_array(y_train,num_aug):
     return y_train				#return numpy array
     
 def create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,starting_weights,lr):
-    """function which creates, load weights and compiles convolutional neural network  
+    """function which creates, load weights into and compiles convolutional neural network  
     input: num_filters, int, number of filters in the conv2d layers
     input: filter_size, int, size of filters in the conv2d layers 
     input: size, int, size of the square images
     input: l2_reg, float, L2 regulaization weight decay value in conv2d layers
     input: dropout_rate, float, dropout rate in between dense layers
     input: num_dense, int, number of units in dense layer
-    input: starting_weights, string, location of starting weights to load into the model, set to empty string if starting without weights
+    input: starting_weights, string, location of starting weights to load into the model, set to '' if starting without weights
     input: lr, float, learning rate for the model
     output: model, TF neural network model object"""
     model = Sequential()																		#create sequential model
