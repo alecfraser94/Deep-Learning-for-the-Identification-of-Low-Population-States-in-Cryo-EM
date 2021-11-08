@@ -177,9 +177,9 @@ y_train=create_augmented_training_label_array(y_train,num_aug)							#create new
 
 x_train=load_training_images(train,data_dir,training_data_loc,size,guass_mean,gauss_var)			#load training images into numpy array for training
 
-x_test=load_test_images(test,data_dir,test_data_loc,size)							#load test images into numpy array for validation
+x_test=load_test_images(test,data_dir,test_data_loc,size)							#load test images into numpy array for testing on independant dataset
 
 model=create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,starting_weights,lr)		#create, compile and load weights (optional) for CNN model object, 
 
-train_network(model,num_iterations,x_train,y_train,x_test,y_test,last_iteration)				#train network, create validation reports and save model weights
+train_network(model,num_iterations,x_train,y_train,x_test,y_test,last_iteration)				#train network, create test-set validation reports and save model weights
 
