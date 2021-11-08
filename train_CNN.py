@@ -53,7 +53,7 @@ def load_training_images(train,data_dir,training_data_loc,size,guass_mean,gauss_
     input: size, int, size of the square images
     input: gauss_mean, float, mean of gaussian noise added to images in data augmentation
     input: gauss_var, float, variance of gaussian noise added to images in data augmentation
-    output: x_train, np array, all training images in a numpy array """
+    output: x_train, np array, all training images in a numpy array"""
     all_images = [] 									#array which will hold the images
     for y in range(-1,2,1): 								#for loop through y direction in data augmentation
         for x in range(-1,2,1): 							#for loop through x direction in data augmentation
