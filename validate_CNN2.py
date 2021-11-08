@@ -105,7 +105,7 @@ def perform_validation(x_validate,model,val_list):
     
 data_dir = os.path.abspath(data_directory)									#create path for the data directory
 
-validate = pd.read_csv(os.path.join(data_dir,validation_data_loc, validate_name),sep=',')			#create dataframe of the validation set from a csv file
+validate = pd.read_csv(os.path.join(data_dir,validation_data_loc,validate_name),sep=',')			#create dataframe of the validation set from a csv file
 
 x_validate=load_validation_images(validate,data_dir,validation_data_loc,size)					#load validation images into numpy array
 
