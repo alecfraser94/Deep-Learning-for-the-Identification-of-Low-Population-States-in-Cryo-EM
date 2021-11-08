@@ -42,7 +42,7 @@ def add_noise(image,mean,var,size):
     output: image+gauss, ndarray, image with gaussian noise added"""
     sigma=var**0.5					#calculate sigma from the variance
     gauss=np.random.normal(mean,sigma,(size,size))	#generate a ndarray of normally distributed noise with a mean and sigma as defined previously
-    gauss=gauss.reshape([size, size, 1])		# reshape ndarray to be the same dimensions as input images
+    gauss=gauss.reshape([size, size, 1])		#reshape ndarray to be the same dimensions as input images
     return image+gauss					#return image with noise added
     
 def load_training_images(train,data_dir,training_data_loc,size,guass_mean,gauss_var):
