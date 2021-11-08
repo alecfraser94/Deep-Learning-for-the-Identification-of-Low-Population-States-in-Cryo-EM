@@ -109,7 +109,7 @@ validate = pd.read_csv(os.path.join(data_dir,validation_data_loc,validate_name),
 
 x_validate=load_validation_images(validate,data_dir,validation_data_loc,size)					#load validation images into numpy array
 
-model=create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,starting_weights,lr)		#create, compile and load weights (optional) for CNN model object 
+model=create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,starting_weights,lr)		#create, compile and load weights for CNN model object 
 
 perform_validation(x_validate,model,val_list)									#perform predictions on the validation set
 
