@@ -26,10 +26,10 @@ lr=0.0000005		#float: learning rate for the model
 starting_weights=''  			#string: location of starting weights to load into the model, set to empty string if starting without weights
 validation_data_loc=''			#string: location of validation data directory
 data_directory='' 			#string: location of training and validation data
-val_list='val_postive_list.txt'		#string: location of where to save list of stalled intermediate particle numbers for cryoSPARC
+val_list='val_postive_list.txt'		#string: name and location of where to save list of stalled intermediate particle numbers for cryoSPARC
     
 def load_validation_images(validate,data_dir,validation_data_loc,size):
-    """loads validation images
+    """function which loads validation images
     input: validate, dataframe, contains image names and labels in the validation set
     input: data_dir, path, location of training and validation data
     input: validation_data_loc, string, location of validation data directory
@@ -46,7 +46,7 @@ def load_validation_images(validate,data_dir,validation_data_loc,size):
     return x_validate								#return numpy array
     
 def create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,starting_weights,lr):
-    """create, load weights and compile convolutional neural network  
+    """function which creates, loads in weights and compiles the convolutional neural network  
     input: num_filters, int, number of filters in the conv2d layers
     input: filter_size, int, size of filters in the conv2d layers 
     input: size, int, size of the square images
