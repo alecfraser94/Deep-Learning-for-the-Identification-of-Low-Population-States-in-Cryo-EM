@@ -95,7 +95,7 @@ def create_augmented_training_label_array(y_train,num_aug):
     """function which creates an augmented training label array from the original non augmented training label array
     input: y_train, binary matrix, training labels
     input: num_aug, int, number of extra data augmented images to add per original image
-    output: y_train, numpy array, labels for data augmented training set """
+    output: y_train, numpy array, labels for data augmented training set"""
     length,width=y_train.shape			#get length of the original label matrix
     y_train_large=[]				#create new array
     for j in range(num_aug+1):			#loop through new data augmentation multiple of images
