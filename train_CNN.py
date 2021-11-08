@@ -75,7 +75,7 @@ def load_training_images(train,data_dir,training_data_loc,size,guass_mean,gauss_
     return x_train									#return numpy array
     
 def load_test_images(test,data_dir,test_data_loc,size):
-    """loads test images
+    """function which loads test images
     input: test, dataframe, contains image names and labels in the test set
     input: data_dir, path, location of training and validation data
     input: test_data_loc, string, location of test data directory
@@ -92,7 +92,7 @@ def load_test_images(test,data_dir,test_data_loc,size):
     return x_test							#return numpy array
     
 def create_augmented_training_label_array(y_train,num_aug):
-    """creates an augmented training label array from the original non augmented training label array
+    """function which creates an augmented training label array from the original non augmented training label array
     input: y_train, binary matrix, training labels
     input: num_aug, int, number of extra data augmented images to add per original image
     output: y_train, numpy array, labels for data augmented training set """
@@ -105,7 +105,7 @@ def create_augmented_training_label_array(y_train,num_aug):
     return y_train				#return numpy array
     
 def create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,starting_weights,lr):
-    """create, load weights and compile convolutional neural network  
+    """function which creates, load weights and compiles convolutional neural network  
     input: num_filters, int, number of filters in the conv2d layers
     input: filter_size, int, size of filters in the conv2d layers 
     input: size, int, size of the square images
@@ -142,7 +142,7 @@ def create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,star
     return model																			#return model object
     
 def train_network(model,num_iterations,x_train,y_train,x_test,y_test,last_iteration):
-    """train neural network with training data, save weights after each epoch and test metrics after each epoch
+    """function which trains the neural network with training data, then save weights after each epoch and tests the metrics after each epoch
     input: model, TF object, cnn model to train
     input: num_iterations, int, number of epochs to run training
     input: x_train, np array, training images
