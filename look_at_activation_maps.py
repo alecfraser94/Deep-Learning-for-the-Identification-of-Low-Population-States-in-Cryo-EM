@@ -34,11 +34,11 @@ dropout_rate=0.5	#float: dropout rate in between dense layers
 l2_reg=0.0005		#float: L2 regulaization weight decay value in conv2d layers
 lr=0.0000005		#float: learning rate for the model
 
-starting_weights=''  			#string: location of starting weights to load into the model
-data_directory='' 		        #string: location of training and validation data
-viz_layer_number=0		        #int: conv2D layer number to visualize
-filter_number=0			        #int: filter number to visualize
-img_name=''	                      #string: name of the image to visualize
+starting_weights=''     #string: location of starting weights to load into the model
+data_directory=''       #string: location of training and validation data
+viz_layer_number=0      #int: conv2D layer number to visualize
+filter_number=0         #int: filter number to visualize
+img_name=''             #string: name of the image to visualize
     
 def create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,starting_weights,lr):
     """function which creates, loads in weights and compiles the convolutional neural network  
