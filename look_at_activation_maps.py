@@ -85,23 +85,23 @@ def look_at_act_maps(model,layer,filter_number,data_dir,img_name,size):
     input: data_dir, path, location of training and validation data
     input: image_name, string, location and name of image to be made into an activation map
     input: size, int, size of the square images"""
-    model2 = Model(inputs=model.inputs, outputs=model.layers[layer].output) 		#create a new model class with the same input as the trained model but which outputs the output of the specified conv2d layer
-    image_path = os.path.join(data_dir, img_name)					#create the image path
-    img = imread(image_path, flatten=True)						#read the image
-    img = img.reshape([size, size, 1])						    #reshape the image for normalization
-    img=(img - img.mean())/img.std()							#normalize the image
-    img = expand_dims(img, axis=0)							    #expand the dimsensions of the image prior to passing it as input to the model
-    pylab.imshow(img.squeeze(), cmap='gray')						#show the original image
-    pylab.axis('off')									#don't show the axis labels
-    pylab.show()									#display the original image
-    feature_maps = model2.predict(img)						#use the new model class to predict the activation map 
-    plt.imshow(feature_maps[0, :, :, filter_number], cmap='gray')			#show the activation map image
-    pylab.axis('off')									#don't show the axis labels
-    plt.show()										#display the activation map image
+    model2 = Model(inputs=model.inputs, outputs=model.layers[layer].output)         #create a new model class with the same input as the trained model but which outputs the output of the specified conv2d layer
+    image_path = os.path.join(data_dir, img_name)                                   #create the image path
+    img = imread(image_path, flatten=True)                                          #read the image
+    img = img.reshape([size, size, 1])                                              #reshape the image for normalization
+    img=(img - img.mean())/img.std()                                                #normalize the image
+    img = expand_dims(img, axis=0)                                                  #expand the dimsensions of the image prior to passing it as input to the model
+    pylab.imshow(img.squeeze(), cmap='gray')                                        #show the original image
+    pylab.axis('off')                                                               #don't show the axis labels
+    pylab.show()                                                                    #display the original image
+    feature_maps = model2.predict(img)                                              #use the new model class to predict the activation map 
+    plt.imshow(feature_maps[0, :, :, filter_number], cmap='gray')                   #show the activation map image
+    pylab.axis('off')                                                               #don't show the axis labels
+    plt.show()                                                                      #display the activation map image
     
-data_dir = os.path.abspath(data_directory)									#create path for the data directory
+data_dir = os.path.abspath(data_directory)                                                              #create path for the data directory
 
-model=create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,starting_weights,lr)		#create, compile and load weights for CNN model object 
+model=create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,starting_weights,lr)      #create, compile and load weights for CNN model object 
 
-look_at_act_maps(model,viz_layer_number,filter_number,data_dir,img_name,size)								#create activation map
+look_at_act_maps(model,viz_layer_number,filter_number,data_dir,img_name,size)                           #create activation map
 
