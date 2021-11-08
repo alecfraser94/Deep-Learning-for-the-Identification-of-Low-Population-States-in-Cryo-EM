@@ -88,7 +88,7 @@ def perform_validation(x_validate,model,val_list):
     input: x_validate, numpy array with validation images
     input: model, TF object, trained model to perform validation
     input: val_list, string, name of file to save list of stalled intermediate identified particles"""
-    val_pred=model.predict(x_validate)			# perform prediction on the validation dataset
+    val_pred=model.predict(x_validate)			#perform prediction on the validation dataset
     keep_list=[]					#create list which will store IDs for stalled intermediate particles
     num_rows, num_cols = val_pred.shape			#get shape of validation dataset
     val_pred_class=np.empty([num_rows,num_cols])	#create empty numpy array for binarized validation predictions
