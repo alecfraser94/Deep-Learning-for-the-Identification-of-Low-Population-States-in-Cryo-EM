@@ -80,7 +80,7 @@ def create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,star
 def look_at_act_maps(model,layer,filter_number,data_dir,img_name,size):
     """function which creates and plots an activation map of an image
     input: model, TF neural network model object, trained model used for the creation of activation maps
-    input: layer, int, layer number corresponding to conv2d layer output which will be generated
+    input: layer, int, layer number corresponding to conv2d layer output
     input: filter_number, int, 0-indexed filter number from the conv2d layer to visualize
     input: data_dir, path, location of training and validation data
     input: image_name, string, location and name of image to be made into an activation map
@@ -88,9 +88,9 @@ def look_at_act_maps(model,layer,filter_number,data_dir,img_name,size):
     model2 = Model(inputs=model.inputs, outputs=model.layers[layer].output) 		#create a new model class with the same input as the trained model but which outputs the output of the specified conv2d layer
     image_path = os.path.join(data_dir, img_name)					#create the image path
     img = imread(image_path, flatten=True)						#read the image
-    img = img.reshape([size, size, 1])						#reshape the image for normalization
+    img = img.reshape([size, size, 1])						    #reshape the image for normalization
     img=(img - img.mean())/img.std()							#normalize the image
-    img = expand_dims(img, axis=0)							#expand the dimsensions of the image prior to passing it as input to the model
+    img = expand_dims(img, axis=0)							    #expand the dimsensions of the image prior to passing it as input to the model
     pylab.imshow(img.squeeze(), cmap='gray')						#show the original image
     pylab.axis('off')									#don't show the axis labels
     pylab.show()									#display the original image
