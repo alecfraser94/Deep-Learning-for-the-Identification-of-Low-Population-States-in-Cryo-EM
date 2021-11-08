@@ -26,7 +26,7 @@ from keras.layers.normalization import BatchNormalization
 from keras.layers import Dense, Conv2D, MaxPooling2D, Flatten, Dropout, Activation
 from tensorflow.keras.regularizers import l2
 
-size=128 		    #int: size of the square images
+size=128 	        #int: size of the square images
 filter_size=15 		#int: size of filters in the conv2d layers 
 num_filters=64		#int: number of filters in the conv2d layers
 num_dense=500		#int: number of units in dense layer
@@ -35,10 +35,10 @@ l2_reg=0.0005		#float: L2 regulaization weight decay value in conv2d layers
 lr=0.0000005		#float: learning rate for the model
 
 starting_weights=''  			#string: location of starting weights to load into the model
-data_directory='' 			    #string: location of training and validation data
-viz_layer_number=0			    #int: conv2D layer number to visualize
+data_directory='' 		        #string: location of training and validation data
+viz_layer_number=0		        #int: conv2D layer number to visualize
 filter_number=0			        #int: filter number to visualize
-img_name=''				        #string: name of the image to visualize
+img_name=''			            #string: name of the image to visualize
     
 def create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,starting_weights,lr):
     """function which creates, loads in weights and compiles the convolutional neural network  
