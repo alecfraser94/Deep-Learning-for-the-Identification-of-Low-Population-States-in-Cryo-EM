@@ -80,7 +80,7 @@ def load_test_images(test,data_dir,test_data_loc,size):
     input: data_dir, path, location of training and validation data
     input: test_data_loc, string, location of test data directory
     input: size, int, size of the square images
-    output: x_test, np array, all training images in a numpy array"""
+    output: x_test, np array, all test images in a numpy array"""
     all_images = []							#array which will hold the images
     for img_name in test.filename:					#loop through all images in the test set
         image_path = os.path.join(data_dir,test_data_loc, img_name)	#define image path
