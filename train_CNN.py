@@ -142,7 +142,7 @@ def create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,star
     return model																			#return model object
     
 def train_network(model,num_iterations,x_train,y_train,x_test,y_test,last_iteration):
-    """function which trains the neural network with training data, then save weights after each epoch and tests the metrics after each epoch
+    """function which trains the neural network with training data, then saves the weights and tests the metrics after each epoch
     input: model, TF object, cnn model to train
     input: num_iterations, int, number of epochs to run training
     input: x_train, np array, training images
