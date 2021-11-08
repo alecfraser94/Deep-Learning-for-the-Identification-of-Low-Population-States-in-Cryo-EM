@@ -137,7 +137,7 @@ def create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,star
     model.add(Dropout(dropout_rate))																	#add dropout layer
     model.add(Dense(2,activation='softmax'))																#add softmax layer
     if starting_weights:																		#check for weights to load
-        model.load_weights(starting_weights)																#load weights if exist
+        model.load_weights(starting_weights)																#load weights if they exist
     model.compile(optimizer=keras.optimizers.Adam(lr=lr), loss='binary_crossentropy', metrics=['accuracy'])								#compile the model with a binary_crossentropy loss
     return model																			#return model object
     
