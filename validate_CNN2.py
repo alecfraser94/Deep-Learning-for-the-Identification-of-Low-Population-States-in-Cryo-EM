@@ -83,11 +83,10 @@ def create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,star
     return model																			#return model object
     
 def perform_validation(x_validate,model,val_list):
-    """predict validation set images with CNN, saves a list of the predictions to be used in cryoSPARC
+    """function which predicts validation set images with CNN, saves a list of the predictions to be used in cryoSPARC
     input: x_validate, numpy array with validation images
     input: model, TF object, trained model to perform validation
-    input: val_list, string, name of file to save list of stalled intermediate identified particles
-    """
+    input: val_list, string, name of file to save list of stalled intermediate identified particles"""
     val_pred=model.predict(x_validate)			# perform prediction on the validation dataset
     keep_list=[]					#create list which will store IDs for stalled intermediate particles
     num_rows, num_cols = val_pred.shape			#get shape of validation dataset
@@ -105,11 +104,11 @@ def perform_validation(x_validate,model,val_list):
     
 data_dir = os.path.abspath(data_directory)									#create path for the data directory
 
-validate = pd.read_csv(os.path.join(data_dir,validation_data_loc, 'validate_all.csv'),sep=',')			#create dataframe of the training set from a csv file
+validate = pd.read_csv(os.path.join(data_dir,validation_data_loc, 'validate_all.csv'),sep=',')			#create dataframe of the validation set from a csv file
 
 x_validate=load_validation_images(validate,data_dir,validation_data_loc,size)					#load validation images into numpy array
 
-model=create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,starting_weights,lr)		#create, compile and load weights (optional) for CNN model object, 
+model=create_model(num_filters,filter_size,size,l2_reg,dropout_rate,num_dense,starting_weights,lr)		#create, compile and load weights (optional) for CNN model object 
 
-perform_validation(x_validate,model,val_list)									#perform validation
+perform_validation(x_validate,model,val_list)									#perform predictions on the validation set
 
